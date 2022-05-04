@@ -15,4 +15,8 @@ PrepaidUnits (single line of text)
 RemainingUnits (single line of text)
 Date (Date and time - date only)
 
-2. Replace information in the script accordingly with information for your app registration, SPO site ID in Graph calls, send an email, etc.
+2. Make sure App Registration has write permissios to the SPO site being used - more info here:
+
+https://ashiqf.com/2021/03/15/how-to-use-microsoft-graph-sharepoint-sites-selected-application-permission-in-a-azure-ad-application-for-more-granular-control/
+
+3. Replace information in the script accordingly with information for your app registration, SPO site ID in Graph calls, send an email, etc.
