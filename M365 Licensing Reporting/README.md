@@ -8,12 +8,12 @@ To use this script in your environment follow this steps:
 
 1. Create a SharePoint Online list with the following columns:
 
-Title
-SkuID (single line of text)
-ConsumedUnits (single line of text)
-PrepaidUnits (single line of text)
-RemainingUnits (single line of text)
-Date (Date and time - date only)
+Title;
+SkuID (single line of text);
+ConsumedUnits (single line of text);
+PrepaidUnits (single line of text);
+RemainingUnits (single line of text);
+Date (Date and time - date only);
 
 2. Make sure App Registration has write permissios to the SPO site being used - more info here:
 
