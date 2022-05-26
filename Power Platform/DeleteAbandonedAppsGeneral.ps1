@@ -1,4 +1,5 @@
 #Script to find and delete abandoned apps in any given Power Platform Environment
+#Updated 5/26/2022
 
 #Import modules
 Import-Module Microsoft.PowerApps.Administration.PowerShell
