@@ -1,4 +1,4 @@
-#Script to find and delete abandoned flows across all environments
+#Script to find and delete abandoned flows in any given Power Platform Environment
 
 #$LogFileName = "C:\Scripts\ScheduledTasks\AbandonedFlowsApps\Logs\testflows.log"
 

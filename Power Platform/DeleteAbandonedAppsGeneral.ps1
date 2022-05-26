@@ -1,4 +1,4 @@
-#Script to find and delete abandoned apps in the Cerner Default environment
+#Script to find and delete abandoned apps in any given Power Platform Environment
 
 #Import modules
 Import-Module Microsoft.PowerApps.Administration.PowerShell
