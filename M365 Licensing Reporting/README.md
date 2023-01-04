@@ -6,17 +6,17 @@ The script needs an Azure App Registration with organization.read.all, directory
 
 To use this script in your environment follow this steps:
 
-1. Create a SharePoint Online list with the following columns:
+## Create a SharePoint Online list with the following columns:
 
-Title;
-SkuID (single line of text);
-ConsumedUnits (single line of text);
-PrepaidUnits (single line of text);
-RemainingUnits (single line of text);
-Date (Date and time - date only);
+1. Title
+2. SkuID (single line of text)
+3. ConsumedUnits (single line of text)
+4. PrepaidUnits (single line of text)
+5. RemainingUnits (single line of text)
+6. Date (Date and time - date only)
 
-2. Make sure App Registration has write permissios to the SPO site being used - more info here:
+## Make sure App Registration has write permissios to the SPO site being used - more info here:
 
 https://ashiqf.com/2021/03/15/how-to-use-microsoft-graph-sharepoint-sites-selected-application-permission-in-a-azure-ad-application-for-more-granular-control/
 
-3. Replace information in the script accordingly with information for your app registration, SPO site ID in Graph calls, send an email, etc.
+## Replace information in the script accordingly with information for your app registration, SPO site ID in Graph calls, send an email, etc.
