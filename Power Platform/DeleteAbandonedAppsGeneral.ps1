@@ -93,14 +93,21 @@ foreach ($app in $filteredapps)
         foreach ($permission in $permissions) 
         {
             $users = $null
+            $groups = $null
             $roleType = $permission.RoleType
+            $PrinType = $permission.PrincipalType
         
             if ($roleType -ne $null){
 
                 if ($roleType.ToString() -eq "Owner" -or $roleType.ToString() -eq "CanEdit" -or $roleType.ToString() -eq "CanView")
                 {
-                    $userId = $permission.PrincipalObjectId
-                    Try{$users = Get-AzureADUser -Filter "ObjectId eq '$userId'"}
+                    $PrinID = $permission.PrincipalObjectId
+                    Try{
+                        
+                        $users = Get-AzureADUser -Filter "ObjectId eq '$PrinID'"
+                        $groups = Get-AzureADGroup -Filter "ObjectId eq '$PrinID'"
+                        
+                        }
                     Catch [Microsoft.Open.AzureAD16.Client.ApiException]
                         {
                  
@@ -108,11 +115,12 @@ foreach ($app in $filteredapps)
                          #Reauthenticate
                          Write-Log "Session to AzureAD timedout... reconnecting now"
                          Connect-AAD
-                         $users = Get-AzureADUser -Filter "ObjectId eq '$userId'"
+                         $users = Get-AzureADUser -Filter "ObjectId eq '$PrinID'"
+                         $groups = Get-AzureADGroup -Filter "ObjectId eq '$PrinID'"
 
                         }
 
-                    if ($users.Length -gt 0)
+                    if ($users.Length -gt 0 -or $groups.Length -gt 0)
                     {
                         $hasValidOwner = $true
                         Write-log "$($app.DisplayName) has owners/editors/viewers, skipping..."
