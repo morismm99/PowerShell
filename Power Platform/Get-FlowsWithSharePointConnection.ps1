@@ -50,7 +50,4 @@ foreach ($e in $envs)
 }
 
 $output | Format-Table $ft -AutoSize
-$Output | export-csv -path c:\temp\spoflows.csv -NoTypeInformation
-
-
-
+$output | export-csv -path c:\temp\spoflows.csv -NoTypeInformation
