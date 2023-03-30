@@ -1,5 +1,8 @@
 ﻿##This script identifies and outputs a list of canvas app leveraging the SharePoint connector, sites and lists.
+## Credit to Pete Puustinent
+## You can find this and other scripts in his Github repo - https://github.com/petepuu/PowerShell/tree/main/PowerPlatform
 
+#authenticate to Power Apps/Power Automate
 Add-PowerAppsAccount
 
 $ft = @{Expression={$_.Environment};Label="Environment"},
