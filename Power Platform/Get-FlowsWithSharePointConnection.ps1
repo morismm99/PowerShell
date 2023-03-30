@@ -1,5 +1,5 @@
 ﻿## This script outputs a list of flows leveraging SharePoint connector along with site and list being touched
-## Credit to Pete Puustinent
+## Credit to Pete Puustinen
 ## You can find this and other scripts in his Github repo - https://github.com/petepuu/PowerShell/tree/main/PowerPlatform
 
 #authenticate to Power Apps/Power Automate
