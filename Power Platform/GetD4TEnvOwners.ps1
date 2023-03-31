@@ -5,10 +5,10 @@
 Add-PowerAppsAccount
 
 #Authenticate to EXchange Online
-Connect-ExchageOnline
+Connect-ExchangeOnline
 
 #Get Dataverse for Teams environments
-$DV4TS = Get-AdminPowerAppEnvironment | where {$_.EnvironmentType -eq "NotSpecified"} | select-object -property internal
+$DV4TS = Get-AdminPowerAppEnvironment | Where-Object {$_.internal.properties.linkedEnvironmentMetadata.platformSku -eq "Lite"} | select-object -property internal
 
 #check to see if the MS Teams behind the Dataverse for Teams environments have owners.
 foreach ($DV4T in $DV4TS){
@@ -18,7 +18,7 @@ foreach ($DV4T in $DV4TS){
 
     $Owners = Get-UnifiedGroup -Identity $MSTeamID | Get-UnifiedGroupLinks -LinkType Owner
 
-    If($owners -eq $null){
+    If($null -eq $owners){
 
         Write-Output "$MSTeamID Team has no owners"
         #You can use the Send-MailMessage commandlet to send an alert for each Dataverse for Teams which has no owners to a desire admin/DL
