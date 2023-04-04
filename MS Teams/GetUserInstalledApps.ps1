@@ -5,7 +5,7 @@
 # Connect to Microsoft Graph API
 Connect-MSGraph -Scopes "User.Read.All","Group.ReadWrite.All","TeamsAppInstallation.ReadForUser"
 
-# Specify the user's email address
+# Specify the user's AAD Object ID/GUID
 $userGUID = "<userGUID>"
 
 # Get the list of apps and their details used by the user
