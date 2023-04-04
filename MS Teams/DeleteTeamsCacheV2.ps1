@@ -1,4 +1,4 @@
-﻿##Clean Teams Cache V2
+﻿##Clean Teams Cache V2 - this one may be outdated - need to review.
 ##This version deletes all of the folders under Teams except the Backgrounds and meeting-addin. 
 ##It also deletes preference and settings files, so please inform the user preferred settings will need to be set again
 
