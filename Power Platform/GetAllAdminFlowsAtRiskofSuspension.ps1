@@ -10,7 +10,7 @@ Import-Module Microsoft.PowerApps.Administration.PowerShell
 Add-PowerAppsAccount
 
 # Get all environments
-$environments = Get-AdminPowerAppEnvironment
+$environments = Get-PowerAppEnvironment
 
 # Iterate through each environment
 foreach ($environment in $environments) {
