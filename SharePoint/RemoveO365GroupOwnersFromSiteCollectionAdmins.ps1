@@ -10,8 +10,8 @@ $Group = "c:0t.c|tenant|<group object ID>"
 #Connect to SharePoint Online and authenticate
 Connect-SPOService -url $AdminURL 
  
-#Get All Site Collections
-$Sites = Get-SPOSite -Limit ALL
+#Get All site collections tied to an M365 group
+$Sites = Get-SPOSite -Template 'GROUP#0' -IncludePersonalSite:$false
  
 #Loop through each site, add group as site colleciton admin and remove 365 group owners from site collection admins
 Foreach ($Site in $Sites)
