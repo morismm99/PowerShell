@@ -16,8 +16,8 @@ $Sites = Get-SPOSite -Template 'GROUP#0' -IncludePersonalSite:$false
 #Loop through each site, add group as site colleciton admin and remove 365 group owners from site collection admins
 Foreach ($Site in $Sites)
 {
-    Write-host "Adding group as site collection admin for:"$Site.URL -f Green
-    Set-SPOUser -Site $SiteUrl -LoginName $Group -IsSiteCollectionAdmin $true
+    Write-host "Adding group as site collection admin for:"$Site.Url -f Green
+    Set-SPOUser -Site $Site.Url -LoginName $Group -IsSiteCollectionAdmin $true
     Write-host "Scanning site:"$Site.Url -f Yellow
     #Get All Site Collection Administrators
     $Admins = Get-SPOUser -Site $site.Url | Where-Object {$_.IsSiteAdmin -eq $true}
