@@ -1,7 +1,11 @@
-#This is a script example that gets room usage reports for a provided list of rooms. It leverages the graph API.
+#This PowerShell script retrieves calendar events for a list of rooms using Microsoft Graph API. 
+#It iterates through each room, retrieves the events for a specific time period, and then iterates through each event to extract relevant information 
+#such as the room name, subject, start and end time, organizer, and attendees. 
+#The extracted information is then stored in a table and added to a list of tables. 
+
 #The script requires an App regisration with Application type permissions set for Calendars.Read
 
-
+#App Registration information for authentication
 $appID = "AppID"
 $encryptedsecret = "generateandencryptanappregistrationsecret"
 $Pass = $encryptedsecret | ConvertTo-SecureString
@@ -26,7 +30,7 @@ $Table = @()
 $i = 0
 $Count = $Rooms.count
 
-
+#Getting usage data for each room
 foreach ($Room in $Rooms) 
 {
     $i++
